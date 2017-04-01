@@ -5,10 +5,6 @@
 
 - React
 - Babel
-- SASS
-- Webpack
-- Webpack Dev Server `1.16.3`
-
 
 ## Quick Start
 
@@ -24,8 +20,6 @@ $ npm start
 
 |Script|Description|
 |---|---|
-|`npm start`|Start webpack development server @ `localhost:3000`|
-|`npm run dist`|Build the application to `./dist`|
-|`npm run lint`|Lint `.js` files|
+|`npm start`|Start development server @ `localhost:3000`|
+|`npm run build`|Bundles app into static files for production|
 |`npm test`|Run unit tests|
-|`npm run test:watch`|Run unit tests and watch for changes to re-run tests|
