@@ -9,8 +9,8 @@ class KanbanAppContainer extends Component {
       cardList: [
         {
           id: 1,
-          title: "Make a dinner",
-          description: "It's friday so I have to cook pizza",
+          title: "Cook a dinner",
+          description: "It's friday so I have to make a pizza",
           status: "to-do",
           tasks: [
             {
@@ -23,14 +23,14 @@ class KanbanAppContainer extends Component {
         {
           id: 2,
           title: "Go out with Rocky",
-          description: "Rocky need a long walk",
+          description: "Rocky needs a long walk",
           status: "to-do",
           tasks: []
         },
         {
           id: 3,
           title: "Create a Kanban-app",
-          description: "Develop a Kanpan app using React.js",
+          description: "Develop a Kanban app using React.js",
           status: "in-progress",
           tasks: [
             {
