@@ -1,6 +1,6 @@
 # Kanban app built with React to manage your tasks.
 
-# http://kanban-.herokuapp.com/
+## http://kanban-.herokuapp.com/
 
 ## Stack
 
