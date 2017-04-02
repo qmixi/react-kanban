@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import KanbanBoard from '../components/KanbanBoard'
+import KanbanHeader from '../components/KanbanHeader'
 
 class KanbanAppContainer extends Component {
   constructor() {
@@ -58,7 +59,10 @@ class KanbanAppContainer extends Component {
 
   render() {
     return (
-      <KanbanBoard cards={this.state.cardList}></KanbanBoard>
+      <div>
+        <KanbanHeader/>
+        <KanbanBoard cards={this.state.cardList}></KanbanBoard>
+      </div>
     )
   }
 }

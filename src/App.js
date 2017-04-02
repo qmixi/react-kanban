@@ -5,9 +5,7 @@ import KanbanAppContainer from './containers/KanbanAppContainer';
 class App extends Component {
   render() {
     return (
-        <div>
-            <KanbanAppContainer />
-        </div>
+        <KanbanAppContainer />
     );
   }
 }
