@@ -9,7 +9,7 @@ html, body {
   background: linear-gradient(45deg, #08f, #0f8);
   letter-spacing: 0.6px;
   position: relative;
-  top: 100%;
+  min-height: 100%;
 }
 
 body {
