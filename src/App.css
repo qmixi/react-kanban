@@ -5,10 +5,14 @@ html, body {
   margin: 0;
 }
 
-body {
+#root {
   background: linear-gradient(45deg, #08f, #0f8);
+  letter-spacing: 0.6px;
+}
+
+body {
   font-family: sans-serif;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .board {
@@ -47,7 +51,7 @@ body {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   margin: auto;
-  line-height: 42px;
+  line-height: 40px;
   font-size: 20px;
   text-align: center;
   font-weight: 100;
@@ -113,11 +117,12 @@ body {
 .process__title {
   color: rgba(255, 255, 255, 0.66);
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 100;
   letter-spacing: 0.5px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.61);
   padding: 11px;
+  font-weight: 100;
 }
 
 .card {
