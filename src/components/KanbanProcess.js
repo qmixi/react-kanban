@@ -33,4 +33,9 @@ class KanbanProcess extends Component {
   }
 }
 
+KanbanProcess.propTypes = {
+    title: PropTypes.string.isRequired,
+    cards: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
 export default KanbanProcess

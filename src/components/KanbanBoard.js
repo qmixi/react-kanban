@@ -27,4 +27,8 @@ class KanbanBoard extends Component {
   }
 }
 
+KanbanBoard.PropTypes = {
+    cards: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
 export default KanbanBoard;

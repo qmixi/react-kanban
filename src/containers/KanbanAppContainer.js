@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import KanbanBoard from '../components/KanbanBoard'
 
 class KanbanAppContainer extends Component {

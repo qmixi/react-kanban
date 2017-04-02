@@ -15,4 +15,11 @@ class Card extends Component {
   }
 }
 
+Card.propTypes = {
+    title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    tasks: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
 export default Card
