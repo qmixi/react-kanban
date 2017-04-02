@@ -9,7 +9,7 @@ class KanbanBoard extends Component {
 
   render() {
     return (
-      <div className="board">
+      <div className="board clearfix">
         <KanbanProcess
           title={"Do zrobienia"}
           cards={ this.props.cards.filter(card => card.status === "to-do" ) }

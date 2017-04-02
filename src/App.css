@@ -18,12 +18,12 @@ body {
 }
 
 .board {
-  display: flex;
+  /*display: flex;*/
   max-width: 1000px;
 }
 
 .process {
-  flex: 1;
+  /*flex: 1;*/
   padding: 15px;
   margin: 15px;
 }
