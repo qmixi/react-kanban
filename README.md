@@ -6,6 +6,8 @@
 
 - React
 - Babel
+- SASS
+- Bootstrap
 
 ## Quick Start
 
