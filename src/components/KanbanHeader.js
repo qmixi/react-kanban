@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class KanbanHeader extends Component {
     constructor() {
-        super()
+        super();
     }
 
     render() {
