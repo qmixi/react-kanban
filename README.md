@@ -5,6 +5,7 @@
 ## Stack
 
 - React
+- Redux
 - Babel
 - SASS
 - Bootstrap
