@@ -182,12 +182,49 @@ body {
 	height: 40px;
 	padding: 0 35px;
 	background: rgba(255, 255, 255, 0.35);
+	letter-spacing: 0.5px;
+	//@include clearfix;
+
+	&__gh {
+		float: right;
+		display: inline-block;
+		padding: 10px;
+		font-size: 16px;
+		background: rgba(255, 255, 255, 0.3);
+		color: white;
+		text-decoration: none !important;
+		@include transition(all 0.2s ease-out);
+
+		&:hover {
+			color: white;
+			background: transparent;
+		}
+	}
 
 	&__title {
-		padding: 9px;
+		padding: 9px 0;
 		font-size: 16px;
-		text-align: center;
 		font-weight: 300;
 		color: rgba(255, 255, 255, 0.8);
+
+		.header__tx {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 14px;
+			margin-left: 15px;
+		}
+
+		a {
+			color: rgba(255, 255, 255, 0.9);
+			font-weight: 400;
+			text-decoration: none !important;
+			@include transition(all 0.2s ease-out);
+			position: relative;
+			left: 0;
+
+			&:hover {
+				color: rgba(255, 255, 255, 0.6);
+				left: 10px;
+			}
+		}
 	}
 }

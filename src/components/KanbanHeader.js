@@ -8,7 +8,12 @@ class KanbanHeader extends Component {
     render() {
         return (
             <div className="header">
-                <div className="header__title">Kanban React App</div>
+                <a className="header__gh" href="http://www.github.com/qmixi" target="_blank">@qmixi</a>
+                <div className="header__title">
+                    Kanban React App { }
+                    <span className="header__tx">created by</span> { }
+                    <a href="https://piotrkumorek.herokuapp.com" target="_blank">Piotr Kumorek</a>
+                </div>
             </div>
         )
     }
