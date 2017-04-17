@@ -16,7 +16,11 @@ const mapDispatchToProps = dispatch => ({
 			description: payload.description,
 			status: payload.status
 		})
-	}
+	},
+	removeTask: (id) => dispatch({
+		type: 'REMOVE_TASK',
+		id: id
+	})
 });
 
 class KanbanAppContainer extends Component {
@@ -50,7 +54,7 @@ class KanbanAppContainer extends Component {
 		return (
 			<div>
 				<KanbanHeader/>
-				<KanbanBoard cards={this.props.cards} setNewTask={setNewTask}></KanbanBoard>
+				<KanbanBoard cards={this.props.cards} removeTask={this.props.removeTask} setNewTask={setNewTask}></KanbanBoard>
 				{ this.state.isNewCardOpen &&
 				<NewCardForm status={this.state.newTaskStatus} closeNewTaskModal={closeNewTaskModal} addTask={this.props.addTask}/> }
 			</div>

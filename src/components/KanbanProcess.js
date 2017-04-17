@@ -14,6 +14,7 @@ class KanbanProcess extends Component {
 				title={card.title}
 				description={card.description}
 				tasks={card.tasks}
+				removeTask={ this.props.removeTask }
 			/>
 		));
 
@@ -26,9 +27,18 @@ class KanbanProcess extends Component {
 							{cards}
 						</div>
 					</div>
-					<div className="process__add-box">
-						<div className="process__add" onClick={() => {this.props.setNewTask(this.props.status)}}>+</div>
+					{ cards.length < 1 && <div className="process__empty">
+						<i className="glyphicon glyphicon-warning-sign"></i>
+						<span className="process__empty-tx">Brak zadań w tym etapie</span>
 					</div>
+					}
+					<div className="process__add-box">
+						<div className="process__add" onClick={() => {
+							this.props.setNewTask(this.props.status)
+						}}>+
+						</div>
+					</div>
+
 				</div>
 			</div>
 		)

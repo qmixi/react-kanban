@@ -20,6 +20,9 @@ class Card extends Component {
 			<div className={this.state.collapsed ? 'card card--collapsed' : 'card'}>
 				<CardHeader title={this.props.title} toggleCollapse={toggleCollapse} collapsed={this.state.collapsed}/>
 				<div className="card__description">{this.props.description}</div>
+				<div className="card__remove" onClick={() => { this.props.removeTask(this.props.id) }}>
+					<i className="glyphicon glyphicon-trash"></i>
+				</div>
 			</div>
 		)
 	}

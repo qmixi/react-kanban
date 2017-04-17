@@ -35,25 +35,7 @@ const tasks = function(state = [
 			tasks: []
 		},
 		{
-			id: 3,
-			title: "Create a Kanban-app",
-			description: "Develop a Kanban app using React.js",
-			status: "in-progress",
-			tasks: [
-				{
-					id: 1,
-					name: "create main components",
-					done: true,
-				},
-				{
-					id: 2,
-					name: "improve data-flow by using Redux",
-					done: false,
-				}
-			]
-		},
-		{
-			id: 3,
+			id: 4,
 			title: "Start learning React and Redux",
 			description: "Need to read books and implement some basic examples",
 			status: "done",
@@ -63,6 +45,9 @@ const tasks = function(state = [
 	switch(action.type) {
 		case 'ADD_TASK':
 			return [...state, task(state, action)];
+		case 'REMOVE_TASK':
+			let newState = state.filter(card => card.id != action.id);
+			return newState;
 		default:
 			return [...state];
 	}
