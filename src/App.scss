@@ -201,6 +201,8 @@ body {
 	&__header {
 		@include transition(all 0.2s ease-out);
 		cursor: pointer;
+		position: relative;
+		z-index: 99;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 
 		&:hover {
