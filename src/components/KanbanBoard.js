@@ -13,14 +13,20 @@ class KanbanBoard extends Component {
         <KanbanProcess
           title={"Do zrobienia"}
           cards={ this.props.cards.filter(card => card.status === "to-do" ) }
+          status={"to-do"}
+          setNewTask={ this.props.setNewTask }
         />
         <KanbanProcess
           title={"Pracuje nad"}
           cards={ this.props.cards.filter(card => card.status === "in-progress" ) }
+          status={"in-progress"}
+          setNewTask={ this.props.setNewTask }
         />
         <KanbanProcess
           title={"Zrobione"}
           cards={ this.props.cards.filter(card => card.status === "done" ) }
+          status={"done"}
+          setNewTask={ this.props.setNewTask }
         />
       </div>
     )

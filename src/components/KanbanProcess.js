@@ -27,7 +27,7 @@ class KanbanProcess extends Component {
 						</div>
 					</div>
 					<div className="process__add-box">
-						<div className="process__add">+</div>
+						<div className="process__add" onClick={() => {this.props.setNewTask(this.props.status)}}>+</div>
 					</div>
 				</div>
 			</div>

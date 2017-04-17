@@ -1,35 +1,52 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import KanbanBoard from '../components/KanbanBoard'
 import KanbanHeader from '../components/KanbanHeader'
+import NewCardForm from '../components/NewCardForm'
 
 const mapStateToProps = state => ({
-    cards: state.tasks
+	cards: state.tasks
 });
 
 const mapDispatchToProps = dispatch => ({
-    addTodo: (id, title, description, status) => dispatch({
-	    type: 'ADD_TASK',
-	    title: title,
-	    description: description,
-	    status: status
-
-    })
+	addTask: (payload) => {
+		dispatch({
+			type: 'ADD_TASK',
+			title: payload.title,
+			description: payload.description,
+			status: payload.status
+		})
+	}
 });
 
 class KanbanAppContainer extends Component {
-  constructor() {
-    super(...arguments);
-  }
+	constructor() {
+		super(...arguments);
+		this.state = {
+			isNewCardOpen: false,
+			newTaskStatus: "",
+		}
+	}
 
-  render() {
-    return (
-      <div>
-        <KanbanHeader/>
-        <KanbanBoard cards={this.props.cards}></KanbanBoard>
-      </div>
-    )
-  }
+	render() {
+		let setNewTask = status => {
+			this.setState(state => {
+				let newState = this.state;
+				newState.newTaskStatus = status;
+				newState.isNewCardOpen = true;
+				return newState;
+			});
+		};
+
+		return (
+			<div>
+				<KanbanHeader/>
+				<KanbanBoard cards={this.props.cards} setNewTask={setNewTask}></KanbanBoard>
+				{ this.state.isNewCardOpen &&
+				<NewCardForm status={this.state.newTaskStatus} addTask={this.props.addTask}/> }
+			</div>
+		)
+	}
 }
 
 KanbanAppContainer = connect(mapStateToProps, mapDispatchToProps)(KanbanAppContainer);
