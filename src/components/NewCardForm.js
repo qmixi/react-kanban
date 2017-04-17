@@ -23,7 +23,7 @@ class NewCardForm extends Component {
 			descriptionInput;
 
 		let canAddTask = () => {
-			return descriptionInput.value.length > 0 ? true : false;
+			return titleInput.value.length > 0 ? true : false;
 		};
 
 		return (
