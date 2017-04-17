@@ -173,7 +173,7 @@ body {
 	}
 
 	&:hover {
-		@include transform(scale(0.95));
+		@include transform(scale(1.05));
 
 		.card__remove {
 			right: 17px;
