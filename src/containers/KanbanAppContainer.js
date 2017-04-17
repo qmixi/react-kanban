@@ -38,12 +38,21 @@ class KanbanAppContainer extends Component {
 			});
 		};
 
+		let closeNewTaskModal = () => {
+			this.setState(state => {
+				let newState = this.state;
+				newState.newTaskStatus = "";
+				newState.isNewCardOpen = false;
+				return newState;
+			});
+		}
+
 		return (
 			<div>
 				<KanbanHeader/>
 				<KanbanBoard cards={this.props.cards} setNewTask={setNewTask}></KanbanBoard>
 				{ this.state.isNewCardOpen &&
-				<NewCardForm status={this.state.newTaskStatus} addTask={this.props.addTask}/> }
+				<NewCardForm status={this.state.newTaskStatus} closeNewTaskModal={closeNewTaskModal} addTask={this.props.addTask}/> }
 			</div>
 		)
 	}

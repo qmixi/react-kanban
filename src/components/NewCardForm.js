@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 
 class NewCardForm extends Component {
 	constructor() {
@@ -19,40 +19,41 @@ class NewCardForm extends Component {
 	}
 
 	render() {
-		let handleChangeDescription = (event) => {
-			this.setState(state => {
-				let newState = state;
-				newState.description = event.target.value;
-				return newState;
-			});
-		}
+		let titleInput,
+			descriptionInput;
 
-		let handleChangeTitle = (event) => {
-			this.setState(state => {
-				let newState = state;
-				newState.title= event.target.value;
-				return newState;
-			});
-		}
+		let canAddTask = () => {
+			return descriptionInput.value.length > 0 ? true : false;
+		};
 
 		return (
 			<div className="new-card">
-				<div className="new-card__title">Nowe zadanie</div>
-				<div className="new-card__form">
-					<div className="new-card__item">
-						<input type="text" value={this.state.title} onChange={handleChangeTitle} placeholder="tytuł"/>
+				<div className="new-card__content">
+					<div className="new-card__remove" onClick={() => {
+						this.props.closeNewTaskModal()
+					}}>+
 					</div>
-					<div className="new-card__item">
-						<input type="text" value={this.state.description} onChange={handleChangeDescription} placeholder="opis"/>
+					<div className="new-card__title">Nowe zadanie</div>
+					<div className="new-card__form">
+						<div className="new-card__item">
+							<input type="text" ref={node => titleInput = node} placeholder="tytuł"/>
+						</div>
+						<div className="new-card__item">
+							<input type="text" ref={node => descriptionInput = node} placeholder="opis"/>
+						</div>
 					</div>
-				</div>
-				<div className="new-card__submit-row">
+					<div className="new-card__submit-row">
 					<span className="new-card__button" onClick={() => {
-						this.props.addTask({
-							title: this.state.title,
-							description: this.state.description,
-							status: this.state.status
-						})}}>dodaj zadanie</span>
+						if (canAddTask()) {
+							this.props.closeNewTaskModal();
+							this.props.addTask({
+								title: titleInput.value,
+								description: descriptionInput.value,
+								status: this.state.status
+							})
+						}
+					}}>dodaj zadanie</span>
+					</div>
 				</div>
 			</div>
 		);
