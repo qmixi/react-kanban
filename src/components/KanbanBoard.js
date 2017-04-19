@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import KanbanProcess from './KanbanProcess'
+import { DragDropContext } from 'react-dnd'
+import HTML5Backend from 'react-dnd-html5-backend'
 
 class KanbanBoard extends Component {
   constructor() {
@@ -16,6 +18,7 @@ class KanbanBoard extends Component {
           status={"to-do"}
           setNewTask={ this.props.setNewTask }
           removeTask={ this.props.removeTask }
+          cardCallbacks={this.props.cardCallbacks}
         />
         <KanbanProcess
           title={"Pracuje nad"}
@@ -23,6 +26,7 @@ class KanbanBoard extends Component {
           status={"in-progress"}
           setNewTask={ this.props.setNewTask }
           removeTask={ this.props.removeTask }
+          cardCallbacks={this.props.cardCallbacks}
         />
         <KanbanProcess
           title={"Zrobione"}
@@ -30,6 +34,7 @@ class KanbanBoard extends Component {
           status={"done"}
           setNewTask={ this.props.setNewTask }
           removeTask={ this.props.removeTask }
+          cardCallbacks={this.props.cardCallbacks}
         />
       </div>
     )
@@ -40,4 +45,4 @@ KanbanBoard.PropTypes = {
     cards: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
-export default KanbanBoard;
+export default DragDropContext(HTML5Backend)(KanbanBoard);

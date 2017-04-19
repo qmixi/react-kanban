@@ -1,5 +1,19 @@
 import React, {Component, PropTypes} from 'react';
 import Card from './Card'
+import { DropTarget } from 'react-dnd'
+
+const listTargetSpec = {
+	hover(props, monitor) {
+		const draggedId = monitor.getItem().id;
+		props.cardCallbacks.changeStatus(draggedId, props.status)
+	}
+}
+
+function collect(connect, monitor) {
+	return {
+		connectDropTarget: connect.dropTarget()
+	};
+}
 
 class KanbanProcess extends Component {
 	constructor() {
@@ -7,6 +21,8 @@ class KanbanProcess extends Component {
 	}
 
 	render() {
+		const { connectDropTarget } = this.props;
+
 		let cards = this.props.cards.map(card => (
 			<Card
 				key={card.id}
@@ -15,10 +31,11 @@ class KanbanProcess extends Component {
 				description={card.description}
 				tasks={card.tasks}
 				removeTask={ this.props.removeTask }
+				cardCallbacks={this.props.cardCallbacks}
 			/>
 		));
 
-		return (
+		return connectDropTarget(
 			<div className="col-md-4">
 				<div className="process">
 					<div className="process__col">
@@ -38,7 +55,6 @@ class KanbanProcess extends Component {
 						}}>+
 						</div>
 					</div>
-
 				</div>
 			</div>
 		)
@@ -50,4 +66,4 @@ KanbanProcess.propTypes = {
 	cards: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
-export default KanbanProcess
+export default DropTarget('card', listTargetSpec, collect)(KanbanProcess)
