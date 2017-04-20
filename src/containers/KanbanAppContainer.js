@@ -27,10 +27,10 @@ const mapDispatchToProps = dispatch => ({
 		status: status
 	})},
 
-	updatePosition: (payload, pay) => {console.log("a cos tutej", payload, pay);dispatch({
+	updatePosition: (payload, afterId) => {dispatch({
 		type: 'UPDATE_POSITION',
 		id: payload.id,
-		afterId: payload.afterId
+		afterId: afterId
 	})},
 });
 

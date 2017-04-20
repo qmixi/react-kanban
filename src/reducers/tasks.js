@@ -13,35 +13,7 @@ const task = function(state, action) {
 	}
 }
 
-const tasks = function(state = [
-		{
-			id: 1,
-			title: "Cook a dinner",
-			description: "It's friday so I have to make a pizza",
-			status: "to-do",
-			tasks: [
-				{
-					id: 1,
-					name: "buy a required ingredients",
-					done: false,
-				}
-			]
-		},
-		{
-			id: 2,
-			title: "Go out with Rocky",
-			description: "Rocky needs a long walk",
-			status: "to-do",
-			tasks: []
-		},
-		{
-			id: 4,
-			title: "Start learning React and Redux",
-			description: "Need to read books and implement some basic examples",
-			status: "done",
-			tasks: []
-		},
-	], action) {
+const tasks = function(state = [], action) {
 	switch(action.type) {
 		case 'ADD_TASK':
 			return [...state, task(state, action)];
